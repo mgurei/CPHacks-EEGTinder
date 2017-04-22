@@ -1,0 +1,7 @@
+#Sat Apr 22 14:47:37 CEST 2017
+base.0=C\:\\Users\\gurei\\AppData\\Roaming\\SPB_16.6\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_ba8f03e67da59827ec5567f1d3678355ef997687
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\gurei\\AppData\\Roaming\\SPB_16.6\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_cc475abaa7dd2245d630d2a809c620596daa2dd0\\classes.dex
+base.1=C\:\\Users\\gurei\\AppData\\Roaming\\SPB_16.6\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_cc475abaa7dd2245d630d2a809c620596daa2dd0
+file.0=C\:\\Users\\gurei\\AppData\\Roaming\\SPB_16.6\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_ba8f03e67da59827ec5567f1d3678355ef997687\\classes.dex
