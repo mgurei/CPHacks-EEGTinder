@@ -102,6 +102,7 @@ public class MainActivity extends Activity implements OnClickListener {
     ImageView image;
     JSONArray photos;
     int imageNr = 0;
+    int calibrationFlag = 0;
 
     String Id;
     String name;
@@ -154,17 +155,27 @@ public class MainActivity extends Activity implements OnClickListener {
         Button rejectButton = (Button) findViewById(R.id.buttonReject);
         image = (ImageView) findViewById(R.id.imageView);
 
+
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                nextPicture(imageNr);
-                imageNr++;
-                if (imageNr > (photos.length()-1)){
-                    imageNr = 0;
+                if(calibrationFlag == 1){
+                    nextPicture(imageNr);
+                    imageNr++;
+                    if (imageNr > (photos.length()-1)) {
+                        imageNr = 0;
+                    }
                 }
+                else{
+                    String calmURL = "http://foresighteyes.com/images/screens/full/Fixation.png";
+                    image.setImageBitmap(getBitmapFromURL(calmURL));
+                    nameText.setText("");
+
+                }
+
             }
         });
+
 
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,14 +197,6 @@ public class MainActivity extends Activity implements OnClickListener {
                 reject();
             }
         });
-
-        //tinderAuthenticate();
-
-        try {
-            getNewPerson();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
     protected void onPause() {
@@ -735,6 +738,16 @@ public class MainActivity extends Activity implements OnClickListener {
                 .setPositiveButton(R.string.start_calibration_agree, positiveButtonMatchListener)
                 .create();
         introDialog.show();
+    }
+
+    private void startTinder(){
+        calibrationFlag = 1;
+        try {
+            getNewPerson();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

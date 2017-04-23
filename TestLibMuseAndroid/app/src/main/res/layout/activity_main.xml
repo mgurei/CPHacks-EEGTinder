@@ -70,12 +70,15 @@
             android:orientation="horizontal">
 
 
+
+
             <Button
                 android:id="@+id/buttonReject"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:text="Pass" />
+
 
             <Button
                 android:id="@+id/buttonAccept"
