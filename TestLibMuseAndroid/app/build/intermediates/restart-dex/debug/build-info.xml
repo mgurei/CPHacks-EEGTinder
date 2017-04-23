@@ -5,40 +5,40 @@
     density="xxxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="49477770201070"
-    token="7198957461572350170"
+    timestamp="56277078634604"
+    token="-8621371432927399540"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="316" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="98" />
     <task
         name="verifier"
-        duration="0" />
+        duration="19" />
 
     <artifact
-        location="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="49436087315289"
-        verifier="BINARY_MANIFEST_FILE_CHANGE" >
+        timestamp="55873304628302"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\outputs\apk\app-debug.apk"
+            location="C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="49477770201070"
+        timestamp="56277078634604"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
+            location="C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

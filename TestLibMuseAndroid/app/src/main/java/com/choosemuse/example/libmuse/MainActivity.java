@@ -4,6 +4,7 @@ package com.choosemuse.example.libmuse;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -57,17 +58,17 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private final String TAG = "TestLibMuseAndroid";
 
-
     private MuseManagerAndroid manager;
     private Muse muse;
 
     private ConnectionListener connectionListener;
-
+    private int calibrationLength = 10; // seconds
 
     private DataListener dataListener;
 
-//    private final double[] eegBuffer = new double[6];
-//    private boolean eegStale;
+    private double alphaCalib;
+    private double betaCalib;
+
     private final double[] alphaBuffer = new double[6];
     private boolean alphaStale;
     private final double[] betaBuffer = new double[6];
@@ -110,7 +111,7 @@ public class MainActivity extends Activity implements OnClickListener {
         initUI();
 
         // Start our asynchronous updates of the UI.
-        handler.post(tickUi);
+   //     handler.post(tickUi);
     }
 
     protected void onPause() {
@@ -170,10 +171,50 @@ public class MainActivity extends Activity implements OnClickListener {
 
                 // Initiate a connection to the headband and stream the data asynchronously.
                 muse.runAsynchronously();
+
+                setCalibrationDialog();
             }
 
         }
     }
+
+
+    private void setCalibrationDialog() {
+
+        DialogInterface.OnClickListener positiveButtonListener =
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.dismiss();
+                        Log.w(TAG, "Calibration starts");
+                       // startCalibration();
+                    }
+                };
+
+        DialogInterface.OnClickListener negativeButtonListener =
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.dismiss();
+                        Log.w(TAG, "Calibration avoided");
+
+                    }
+                };
+
+
+        AlertDialog introDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.start_calibration_title)
+                .setMessage(R.string.start_calibration_description)
+                .setPositiveButton(R.string.start_calibration_agree, positiveButtonListener)
+                .setNegativeButton(R.string.discard_calibration, negativeButtonListener)
+                .create();
+        introDialog.show();
+    }
+
+
+//    public void startCalibration() {
+//
+//
+//
+//    }
 
     //--------------------------------------
     // Permissions
@@ -352,21 +393,21 @@ public class MainActivity extends Activity implements OnClickListener {
      * functions do some string allocation, so this reduces our memory
      * footprint and makes GC pauses less frequent/noticeable.
      */
-    private final Runnable tickUi = new Runnable() {
-        @Override
-        public void run() {
-//            if (eegStale) {
-//                updateEeg();
+//    private final Runnable tickUi = new Runnable() {
+//        @Override
+//        public void run() {
+////            if (eegStale) {
+////                updateEeg();
+////            }
+//            if (alphaStale) {
+//                updateAlpha();
 //            }
-            if (alphaStale) {
-                updateAlpha();
-            }
-            if (betaStale) {
-                updateBeta();
-            }
-            handler.postDelayed(tickUi, 1000 / 60);
-        }
-    };
+//            if (betaStale) {
+//                updateBeta();
+//            }
+//            handler.postDelayed(tickUi, 1000 / 60);
+//        }
+//    };
 
 
 //    private void updateEeg() {
@@ -381,27 +422,27 @@ public class MainActivity extends Activity implements OnClickListener {
 //    }
 //
 
-    private void updateAlpha() {
-        TextView al1 = (TextView)findViewById(R.id.eeg_al1);
-        TextView al2 = (TextView)findViewById(R.id.eeg_al2);
-        TextView al3 = (TextView)findViewById(R.id.eeg_al3);
-        TextView al4 = (TextView)findViewById(R.id.eeg_al4);
-        al1.setText(String.format("%6.2f", alphaBuffer[0]));
-        al2.setText(String.format("%6.2f", alphaBuffer[1]));
-        al3.setText(String.format("%6.2f", alphaBuffer[2]));
-        al4.setText(String.format("%6.2f", alphaBuffer[3]));
-    }
-
-    private void updateBeta() {
-        TextView be1 = (TextView)findViewById(R.id.eeg_be1);
-        TextView be2 = (TextView)findViewById(R.id.eeg_be2);
-        TextView be3 = (TextView)findViewById(R.id.eeg_be3);
-        TextView be4 = (TextView)findViewById(R.id.eeg_be4);
-        be1.setText(String.format("%6.2f", betaBuffer[0]));
-        be2.setText(String.format("%6.2f", betaBuffer[1]));
-        be3.setText(String.format("%6.2f", betaBuffer[2]));
-        be4.setText(String.format("%6.2f", betaBuffer[3]));
-    }
+//    private void updateAlpha() {
+//        TextView al1 = (TextView)findViewById(R.id.eeg_al1);
+//        TextView al2 = (TextView)findViewById(R.id.eeg_al2);
+//        TextView al3 = (TextView)findViewById(R.id.eeg_al3);
+//        TextView al4 = (TextView)findViewById(R.id.eeg_al4);
+//        al1.setText(String.format("%6.2f", alphaBuffer[0]));
+//        al2.setText(String.format("%6.2f", alphaBuffer[1]));
+//        al3.setText(String.format("%6.2f", alphaBuffer[2]));
+//        al4.setText(String.format("%6.2f", alphaBuffer[3]));
+//    }
+//
+//    private void updateBeta() {
+//        TextView be1 = (TextView)findViewById(R.id.eeg_be1);
+//        TextView be2 = (TextView)findViewById(R.id.eeg_be2);
+//        TextView be3 = (TextView)findViewById(R.id.eeg_be3);
+//        TextView be4 = (TextView)findViewById(R.id.eeg_be4);
+//        be1.setText(String.format("%6.2f", betaBuffer[0]));
+//        be2.setText(String.format("%6.2f", betaBuffer[1]));
+//        be3.setText(String.format("%6.2f", betaBuffer[2]));
+//        be4.setText(String.format("%6.2f", betaBuffer[3]));
+//    }
 
 
 

@@ -1,7 +1,7 @@
-#Sun Apr 23 02:51:58 CEST 2017
-base.0=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9848ab62ffdc796d88b84c3c786c1b9d5f277a2a
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_225ca89623f47a597b04a1a35404f92aec65f15b\\classes.dex
-base.1=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_225ca89623f47a597b04a1a35404f92aec65f15b
-file.0=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9848ab62ffdc796d88b84c3c786c1b9d5f277a2a\\classes.dex
+#Sun Apr 23 04:39:26 CEST 2017
+base.0=C\:\\AndroidProjects\\CPHDragonFlies\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_260f15ce37e8cdced07b424c4bd7491b297dbce3
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\AndroidProjects\\CPHDragonFlies\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c145f0a37654842f0d44ebdff32a5329f0ca000d\\classes.dex
+base.1=C\:\\AndroidProjects\\CPHDragonFlies\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c145f0a37654842f0d44ebdff32a5329f0ca000d
+file.0=C\:\\AndroidProjects\\CPHDragonFlies\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_260f15ce37e8cdced07b424c4bd7491b297dbce3\\classes.dex

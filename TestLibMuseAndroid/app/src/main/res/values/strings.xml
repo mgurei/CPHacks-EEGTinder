@@ -23,4 +23,9 @@
     <string name="permission_dialog_title">Muse Needs Your Permission</string>
     <string name="permission_dialog_description">Muse needs a few permissions to work properly. On the next screens, tap "Allow" to proceed. If you deny, Muse will not work properly until you go into your Android settings and allow.</string>
     <string name="permission_dialog_understand">I Understand</string>
+
+    <string name="start_calibration_title">You need to calibrate Muse</string>
+    <string name="start_calibration_description">Muse needs to record your brain on a neutral state. Please, relax and don\'t think about anything in particular during this state. It will require just a few seconds. </string>
+    <string name="start_calibration_agree">Agree</string>
+    <string name="discard_calibration">Exit</string>
 </resources>
