@@ -33,11 +33,19 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/choosemuse/example/libmuse/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="220" column="12" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="12" />
+            <state relative-caret-position="3105">
+              <caret line="297" column="12" selection-start-line="297" selection-start-column="12" selection-end-line="297" selection-end-column="12" />
               <folding>
-                <element signature="e#7328#7538#0" expanded="true" />
-                <element signature="e#7537#7538#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3651#3665#0" expanded="true" />
+                <element signature="e#6417#6418#0" expanded="true" />
+                <element signature="e#6488#6489#0" expanded="true" />
+                <element signature="e#9594#9595#0" expanded="true" />
+                <element signature="e#9676#9677#0" expanded="true" />
+                <element signature="e#21804#21805#0" expanded="true" />
+                <element signature="e#21858#21859#0" expanded="true" />
+                <element signature="e#21917#21918#0" expanded="true" />
+                <element signature="e#21976#21977#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1621,42 +1629,7 @@
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestLibMuseAndroid" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestLibMuseAndroid" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestLibMuseAndroid" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libmuse" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scratches" />
     </panes>
@@ -1910,11 +1883,19 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/choosemuse/example/libmuse/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="220" column="12" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="12" />
+        <state relative-caret-position="3105">
+          <caret line="297" column="12" selection-start-line="297" selection-start-column="12" selection-end-line="297" selection-end-column="12" />
           <folding>
-            <element signature="e#7328#7538#0" expanded="true" />
-            <element signature="e#7537#7538#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3651#3665#0" expanded="true" />
+            <element signature="e#6417#6418#0" expanded="true" />
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#9594#9595#0" expanded="true" />
+            <element signature="e#9676#9677#0" expanded="true" />
+            <element signature="e#21804#21805#0" expanded="true" />
+            <element signature="e#21858#21859#0" expanded="true" />
+            <element signature="e#21917#21918#0" expanded="true" />
+            <element signature="e#21976#21977#0" expanded="true" />
           </folding>
         </state>
       </provider>

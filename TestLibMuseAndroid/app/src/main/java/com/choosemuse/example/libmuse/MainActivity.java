@@ -2,7 +2,11 @@
 package com.choosemuse.example.libmuse;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -31,12 +35,16 @@ import com.choosemuse.libmuse.MuseManagerAndroid;
 import com.choosemuse.libmuse.MuseVersion;
 import com.choosemuse.libmuse.Result;
 import com.choosemuse.libmuse.ResultLevel;
+import com.goebl.david.Response;
+import com.goebl.david.Webb;
 
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
@@ -46,6 +54,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.bluetooth.BluetoothAdapter;
@@ -53,6 +62,11 @@ import android.bluetooth.BluetoothAdapter;
 
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -81,6 +95,17 @@ public class MainActivity extends Activity implements OnClickListener {
     private ArrayAdapter<String> spinnerAdapter;
 
     private boolean dataTransmission = true;
+
+    TextView nameText;
+    TextView bioText;
+    ImageView image;
+    JSONArray photos;
+    int imageNr = 0;
+
+    String Id;
+    String name;
+
+    Webb webb = Webb.create();
 
 
     @Override
@@ -113,6 +138,58 @@ public class MainActivity extends Activity implements OnClickListener {
 
         // Start our asynchronous updates of the UI.
    //     handler.post(tickUi);
+
+        webb.setBaseUri("https://api.gotinder.com");
+        webb.setDefaultHeader("User-Agent", "Tinder/4.7.1 (iPhone; iOS 9.2; Scale/2.00)");
+        webb.setDefaultHeader("Content-Type","application/json");
+        webb.setDefaultHeader("X-Auth-Token","e4de6e49-7124-4212-b386-b89fda4d7865");
+
+        nameText = (TextView) findViewById(R.id.textName);
+        bioText = (TextView) findViewById(R.id.bioText);
+        Button acceptButton = (Button) findViewById(R.id.buttonAccept);
+        Button rejectButton = (Button) findViewById(R.id.buttonReject);
+        image = (ImageView) findViewById(R.id.imageView);
+
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nextPicture(imageNr);
+                imageNr++;
+                if (imageNr > (photos.length()-1)){
+                    imageNr = 0;
+                }
+            }
+        });
+
+        acceptButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    accept();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+
+        rejectButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                reject();
+            }
+        });
+
+        //tinderAuthenticate();
+
+        try {
+            getNewPerson();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void onPause() {
@@ -528,4 +605,132 @@ public class MainActivity extends Activity implements OnClickListener {
             activityRef.get().receiveMuseArtifactPacket(p, muse);
         }
     }
+
+    public static Bitmap getBitmapFromURL(String src) {
+        try {
+            Log.e("src",src);
+            URL url = new URL(src);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            Log.e("Bitmap","returned");
+            return myBitmap;
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("Exception",e.getMessage());
+            return null;
+        }
+    }
+
+    private void accept() throws JSONException {
+        Response<JSONObject> response = webb
+                .get("/like/" + Id )
+                .ensureSuccess()
+                .asJsonObject();
+
+        JSONObject apiResult = response.getBody();
+        String matchResult = apiResult.getString("match");
+        if(matchResult.equals("true")){
+            matchDialoge();
+            Log.w("MATCH", name);
+
+        }else{
+            Toast.makeText(this, "Liked", Toast.LENGTH_SHORT).show();
+        }
+
+        try {
+            getNewPerson();
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void reject(){
+        Response<JSONObject> response = webb
+                .get("/pass/" + Id )
+                .ensureSuccess()
+                .asJsonObject();
+
+        Toast.makeText(this, "Passed", Toast.LENGTH_SHORT).show();
+        try {
+            getNewPerson();
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+    private void nextPicture(int i){
+        try{
+            JSONObject firstPhoto = photos.getJSONObject(i);
+            String photoUrl = firstPhoto.getString("url");
+
+            Log.w("url", photoUrl);
+
+            image.setImageBitmap(getBitmapFromURL(photoUrl));
+        }
+        catch (JSONException e){
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+    private void getNewPerson() throws JSONException {
+        Response<JSONObject> response = webb
+                .get("/user/recs")
+                .ensureSuccess()
+                .asJsonObject();
+
+        JSONObject apiResult = response.getBody();
+
+        JSONArray results = apiResult.getJSONArray("results");
+        JSONObject firstRes = results.getJSONObject(0);
+
+        String test = firstRes.toString();
+
+        name = firstRes.getString("name");
+        String bio = firstRes.getString("bio");
+        Id = firstRes.getString("_id");
+
+
+        photos = firstRes.getJSONArray("photos");
+        JSONObject firstPhoto = photos.getJSONObject(0);
+        String photoUrl = firstPhoto.getString("url");
+
+        nameText.setText(name);
+        bioText.setText(bio);
+        image.setImageBitmap(getBitmapFromURL(photoUrl));
+    }
+
+
+
+    private void matchDialoge() {
+
+        DialogInterface.OnClickListener positiveButtonMatchListener =
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.dismiss();
+
+                    }
+                };
+
+
+
+        AlertDialog introDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.match_dialoge_title)
+                .setMessage(R.string.match_dialoge_desc + name)
+                .setPositiveButton(R.string.start_calibration_agree, positiveButtonMatchListener)
+                .create();
+        introDialog.show();
+    }
+
 }
