@@ -4,6 +4,7 @@ package com.choosemuse.example.libmuse;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -186,7 +187,13 @@ public class MainActivity extends Activity implements OnClickListener {
                     public void onClick(DialogInterface dialog, int which){
                         dialog.dismiss();
                         Log.w(TAG, "Calibration starts");
-                       // startCalibration();
+                        //startCalibration();
+                        Executors.newSingleThreadExecutor().execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                startCalibration();
+                            }
+                        });
                     }
                 };
 
@@ -210,11 +217,43 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
 
-//    public void startCalibration() {
-//
-//
-//
-//    }
+    public void startCalibration() {
+            
+        double[] calibration_alpha = new double[6];
+            double[] calibration_beta = new double[6];
+            long startTime = System.currentTimeMillis(); //fetch starting time
+
+            int N = 0;
+            while ((System.currentTimeMillis() - startTime) < 5000) {
+                N++;
+
+                calibration_alpha[0] += alphaBuffer[0];
+                calibration_alpha[1] += alphaBuffer[1];
+                calibration_alpha[2] += alphaBuffer[2];
+                calibration_alpha[3] += alphaBuffer[3];
+                calibration_alpha[4] += alphaBuffer[4];
+                calibration_alpha[5] += alphaBuffer[5];
+
+                calibration_beta[0] += betaBuffer[0];
+                calibration_beta[1] += betaBuffer[1];
+                calibration_beta[2] += betaBuffer[2];
+                calibration_beta[3] += betaBuffer[3];
+                calibration_beta[4] += betaBuffer[4];
+                calibration_beta[5] += betaBuffer[5];
+
+            }
+
+            int i;
+            for (i = 0; i < 6; i++) {
+                calibration_alpha[i] = calibration_alpha[i] / N;
+                calibration_beta[i] = calibration_beta[i] / N;
+                Log.w(TAG, "alpha mean" + i + " = " + calibration_alpha[i]);
+                Log.w(TAG, "beta mean" + i + " = " + calibration_alpha[i]);
+
+            }
+
+
+    }
 
     //--------------------------------------
     // Permissions

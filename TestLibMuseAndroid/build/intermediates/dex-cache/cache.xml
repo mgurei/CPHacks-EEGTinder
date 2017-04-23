@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="81b612c342998bb8ea62fe82c008e29dd95768ff">
+        sha1="7bcb0e6cc3a835155dd452e13c2fbcf78ce064f4">
         <dex dex="C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c145f0a37654842f0d44ebdff32a5329f0ca000d\classes.dex" />
     </item>
     <item
@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="08b0040c4fe772452282fac9880ba581189e64f0">
+        sha1="fbfe0d8f5d33b8a1611efee10c9f58d3d0b919cf">
         <dex dex="C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_260f15ce37e8cdced07b424c4bd7491b297dbce3\classes.dex" />
     </item>
     <item
