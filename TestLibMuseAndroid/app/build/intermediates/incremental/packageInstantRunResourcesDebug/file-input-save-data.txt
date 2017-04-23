@@ -1,0 +1,18 @@
+#Internal package file, do not edit.
+#Sun Apr 23 02:52:39 CEST 2017
+1.base=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_
+4.file=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+1.file=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu\\main.xml
+4.set=ANDROID_RESOURCE
+2.base=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_
+3.set=ANDROID_RESOURCE
+2.set=ANDROID_RESOURCE
+2.file=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+count=5
+1.set=ANDROID_RESOURCE
+3.base=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_
+0.set=ANDROID_RESOURCE
+0.base=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_
+3.file=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_main.xml
+0.file=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\ic_launcher.png
+4.base=C\:\\AndroidProjects\\CPHDragonFlies\\libmuse_6.0.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\resources-debug.ap_

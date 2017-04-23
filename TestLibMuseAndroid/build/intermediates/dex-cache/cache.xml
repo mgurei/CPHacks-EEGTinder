@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\gurei\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_7f7852fd34357be7d9aca2f3d47f34b67c439e29\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_0d2adc1b5a7d804a64b66a2592e27998d17cc54f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\libs\libmuse_android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e756fe8826070e7f2a88030bf3dcfdf68a625905">
+        <dex dex="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\libmuse_android_c6981cbd35205fb93e9234862b4bf6acd71af3c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_b6a5da0cfc3137eba26af2ded7a270bae74b3fe3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_357302e6bc50278e9f3ddcfa1acb5b053095867e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a3d2ab70d27e5d16bd3617f5e4d540047e6d42e1">
+        <dex dex="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ba8f03e67da59827ec5567f1d3678355ef997687\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8935379d7ad296986b9440d2d6f60bf76249d45f">
+        <dex dex="C:\Users\gurei\AppData\Roaming\SPB_16.6\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_cc475abaa7dd2245d630d2a809c620596daa2dd0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ece699abd6763421d3b7947859f5a9e7d2ace77e">
+        <dex dex="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9848ab62ffdc796d88b84c3c786c1b9d5f277a2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f41537f98e51695ee51cb13b4057f069bdb67484">
+        <dex dex="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_225ca89623f47a597b04a1a35404f92aec65f15b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_b03724d9c6031bffb04ea1b00a526a9c9b302776\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\libs\libmuse_android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e756fe8826070e7f2a88030bf3dcfdf68a625905">
+        <dex dex="C:\AndroidProjects\CPHDragonFlies\libmuse_6.0.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\libmuse_android_05d721f17e116c6d33aa7e0849070c1b6d942b35\classes.dex" />
+    </item>
+
+</items>
