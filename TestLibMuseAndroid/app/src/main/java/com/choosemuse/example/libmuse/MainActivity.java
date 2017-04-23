@@ -49,6 +49,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -135,6 +136,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
         // Load and initialize our UI.
         initUI();
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         // Start our asynchronous updates of the UI.
    //     handler.post(tickUi);
@@ -687,10 +691,10 @@ public class MainActivity extends Activity implements OnClickListener {
     private void getNewPerson() throws JSONException {
         Response<JSONObject> response = webb
                 .get("/user/recs")
-                .ensureSuccess()
                 .asJsonObject();
 
         JSONObject apiResult = response.getBody();
+        Log.w("Json", apiResult.toString());
 
         JSONArray results = apiResult.getJSONArray("results");
         JSONObject firstRes = results.getJSONObject(0);

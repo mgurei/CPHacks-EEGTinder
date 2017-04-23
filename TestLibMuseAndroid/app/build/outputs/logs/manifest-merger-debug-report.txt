@@ -31,6 +31,10 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
 		ADDED from C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:11:5-66
+	android:name
+		ADDED from C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:11:22-64
 uses-sdk
 ADDED from C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:13:5-15:41
 MERGED from [com.android.support:support-v4:23.1.1] C:\AndroidProjects\CPHDragonFlies\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
