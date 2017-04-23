@@ -594,7 +594,7 @@ public class MainActivity extends Activity implements OnClickListener {
         JSONObject apiResult = response.getBody();
         String matchResult = apiResult.getString("match");
         if(matchResult.equals("true")){
-            Toast.makeText(this, "Match with" + name, Toast.LENGTH_LONG).show();
+            matchDialoge();
             Log.w("MATCH", name);
 
         }else{
@@ -670,14 +670,28 @@ public class MainActivity extends Activity implements OnClickListener {
         nameText.setText(name);
         bioText.setText(bio);
         image.setImageBitmap(getBitmapFromURL(photoUrl));
-
-
-
-
-
     }
 
 
 
+    private void matchDialoge() {
+
+        DialogInterface.OnClickListener positiveButtonMatchListener =
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.dismiss();
+
+                    }
+                };
+
+
+
+        AlertDialog introDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.match_dialoge_title)
+                .setMessage(R.string.match_dialoge_desc + name)
+                .setPositiveButton(R.string.start_calibration_agree, positiveButtonMatchListener)
+                .create();
+        introDialog.show();
+    }
 
 }
