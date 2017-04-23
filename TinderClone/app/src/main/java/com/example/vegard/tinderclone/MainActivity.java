@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     JSONArray photos;
     int imageNr = 0;
 
+    String Id;
+    String name;
+
     Webb webb = Webb.create();
 
     @Override
@@ -79,13 +82,20 @@ public class MainActivity extends AppCompatActivity {
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                accept();
+                try {
+                    accept();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
         });
 
         rejectButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 reject();
             }
         });
@@ -101,18 +111,38 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void accept(){
-        Toast.makeText(this, "Accepted", Toast.LENGTH_SHORT).show();
+    private void accept() throws JSONException {
+        Response<JSONObject> response = webb
+                .get("/like/" + Id )
+                .ensureSuccess()
+                .asJsonObject();
+
+        JSONObject apiResult = response.getBody();
+        String matchResult = apiResult.getString("match");
+        if(matchResult.equals("true")){
+            Toast.makeText(this, "Match with" + name, Toast.LENGTH_LONG).show();
+            Log.w("MATCH", name);
+
+        }else{
+            Toast.makeText(this, "Liked", Toast.LENGTH_SHORT).show();
+        }
+
         try {
             getNewPerson();
         } catch (JSONException e){
             e.printStackTrace();
         }
 
+
     }
 
     private void reject(){
-        Toast.makeText(this, "Rejected", Toast.LENGTH_SHORT).show();
+        Response<JSONObject> response = webb
+                .get("/pass/" + Id )
+                .ensureSuccess()
+                .asJsonObject();
+
+        Toast.makeText(this, "Passed", Toast.LENGTH_SHORT).show();
         try {
             getNewPerson();
         } catch (JSONException e){
@@ -154,8 +184,10 @@ public class MainActivity extends AppCompatActivity {
 
         String test = firstRes.toString();
 
-        String name = firstRes.getString("name");
+        name = firstRes.getString("name");
         String bio = firstRes.getString("bio");
+        Id = firstRes.getString("_id");
+
 
         photos = firstRes.getJSONArray("photos");
         JSONObject firstPhoto = photos.getJSONObject(0);
